@@ -8,7 +8,6 @@ import {nelderMead} from "fmin";
 /*global console:true*/
 
 export function VennDiagram() {
-   
     var width = 600,
         height = 350,
         padding = 15,
@@ -19,6 +18,7 @@ export function VennDiagram() {
         styled = true,
         fontSize = null,
         orientationOrder = null,
+        circleType="circle"
 
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
@@ -224,6 +224,13 @@ export function VennDiagram() {
                 'update': update,
                 'exit': exit};
     }
+
+    
+    chart.circleType = function(_) {
+        if (!arguments.length) return circleType;
+        circleType = _;
+        return chart;
+    };
 
     chart.wrap = function(_) {
         if (!arguments.length) return wrap;
