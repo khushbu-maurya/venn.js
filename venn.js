@@ -1238,6 +1238,7 @@
     /*global console:true*/
 
     function VennDiagram() {
+        console.log('running venn diagram');
         var width = 600,
             height = 350,
             padding = 15,
