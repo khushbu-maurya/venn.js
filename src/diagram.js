@@ -19,7 +19,7 @@ export function VennDiagram() {
         styled = true,
         fontSize = null,
         orientationOrder = null,
-        circleType="circle",
+        diagramType="circle",
 
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
@@ -227,9 +227,9 @@ export function VennDiagram() {
     }
 
     
-    chart.circleType = function(_) {
-        if (!arguments.length) return circleType;
-        circleType = _;
+    chart.diagramType = function(_) {
+        if (!arguments.length) return diagramType;
+        diagramType = _;
         return chart;
     };
 
