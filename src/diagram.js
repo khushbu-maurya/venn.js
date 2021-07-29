@@ -8,6 +8,7 @@ import {nelderMead} from "fmin";
 /*global console:true*/
 
 export function VennDiagram() {
+    console.log('running venn diagram');
     var width = 600,
         height = 350,
         padding = 15,
