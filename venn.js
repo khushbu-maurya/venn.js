@@ -1238,8 +1238,7 @@
     /*global console:true*/
 
     function VennDiagram() {
-        console.log('running venn diagram');
-        var width = 600,
+         var width = 600,
             height = 350,
             padding = 15,
             duration = 1000,
@@ -1249,7 +1248,7 @@
             styled = true,
             fontSize = null,
             orientationOrder = null,
-            circleType = "circle",
+            diagramType = "circle",
 
             // mimic the behaviour of d3.scale.category10 from the previous
             // version of d3
@@ -1389,7 +1388,7 @@
             // apply minimal style if wanted
             if (styled) {
 
-                alert(circleType);
+                alert(diagramType);
                 enterPath.style("fill-opacity", "0")
                     .filter(function (d) { return d.sets.length == 1; } )
                     .style("fill", function(d) { return colours(d.sets); })
@@ -1530,9 +1529,9 @@
             return chart;
         };
 
-        chart.circleType = function(_) {
-            if (!arguments.length) return circleType;
-            circleType = _;
+        chart.diagramType = function(_) {
+            if (!arguments.length) return diagramType;
+            diagramType = _;
             return chart;
         };
 
