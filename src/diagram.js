@@ -8,8 +8,7 @@ import {nelderMead} from "fmin";
 /*global console:true*/
 
 export function VennDiagram() {
-    alert("nfdfgk");
-    console.log("=======================");
+   
     var width = 600,
         height = 350,
         padding = 15,
