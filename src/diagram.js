@@ -18,7 +18,7 @@ export function VennDiagram() {
         styled = true,
         fontSize = null,
         orientationOrder = null,
-        circleType="circle"
+        circleType="circle",
 
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
