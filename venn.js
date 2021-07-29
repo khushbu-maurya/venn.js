@@ -571,7 +571,7 @@
     function venn(areas, parameters) {
         parameters = parameters || {};
         parameters.maxIterations = parameters.maxIterations || 500;
-        var initialLayout = parameters.initialLayout || bestInitialLayout;
+        var initialLayout = parameters.initialLayout;
         var loss = parameters.lossFunction || lossFunction;
 
         // add in missing pairwise areas as having 0 size
@@ -1852,7 +1852,7 @@
     exports.greedyLayout = greedyLayout;
     exports.scaleSolution = scaleSolution;
     exports.normalizeSolution = normalizeSolution;
-    exports.bestInitialLayout = bestInitialLayout;
+    //exports.bestInitialLayout = bestInitialLayout;
     exports.lossFunction = lossFunction;
     exports.disjointCluster = disjointCluster;
     exports.distanceFromIntersectArea = distanceFromIntersectArea;
@@ -1860,7 +1860,7 @@
     exports.wrapText = wrapText;
     exports.computeTextCentres = computeTextCentres;
     exports.computeTextCentre = computeTextCentre;
-    exports.sortAreas = sortAreas;
+   // exports.sortAreas = sortAreas;
     exports.circlePath = circlePath;
     exports.circleFromPath = circleFromPath;
     exports.intersectionAreaPath = intersectionAreaPath;
