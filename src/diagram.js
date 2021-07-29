@@ -107,7 +107,7 @@ export function VennDiagram() {
             var path = select(this).attr("d");
             if ((d.sets.length == 1) && path) {
                 hasPrevious = true;
-                previous[d.sets[0]] = circleFromPath(path);
+                previous[d.sets[0]] = diagramType == "circle" ? circleFromPath(path) : ellipseFromPath(path);
             }
         });
 
@@ -584,6 +584,15 @@ export function circleFromPath(path) {
     return {'x' : parseFloat(tokens[1]),
             'y' : parseFloat(tokens[2]),
             'radius' : -parseFloat(tokens[4])
+            };
+}
+
+export function ellipseFromPath(path) {
+    var tokens = path.split(' ');
+    return {'cx' : parseFloat(tokens[1]),
+            'cy' : parseFloat(tokens[2]),
+            'rx' : parseFloat(tokens[1]),
+            'ry' : parseFloat(tokens[2]),
             };
 }
 
