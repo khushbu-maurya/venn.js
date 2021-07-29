@@ -1248,6 +1248,7 @@
             styled = true,
             fontSize = null,
             orientationOrder = null,
+            circleType = "circle"
 
             // mimic the behaviour of d3.scale.category10 from the previous
             // version of d3
@@ -1386,6 +1387,8 @@
 
             // apply minimal style if wanted
             if (styled) {
+
+                alert(circleType);
                 enterPath.style("fill-opacity", "0")
                     .filter(function (d) { return d.sets.length == 1; } )
                     .style("fill", function(d) { return colours(d.sets); })
@@ -1523,6 +1526,12 @@
         chart.orientationOrder = function(_) {
             if (!arguments.length) return orientationOrder;
             orientationOrder = _;
+            return chart;
+        };
+
+        chart.circleType = function(_) {
+            if (!arguments.length) return circleType;
+            circleType = _;
             return chart;
         };
 
