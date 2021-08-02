@@ -163,21 +163,6 @@ export function VennDiagram() {
                     .attr("dy", ".35em")
                     .attr("x", width / 2)
                     .attr("y", height / 2);
-        } else {
-            var enterPath = enter.append("path"),
-                enterText = enter.append("text")
-                    .attr("transform", "translate(" + x + "," + y + ") scale(" + (width / 2) + "," + (height / 2) + ")")
-                    .attr("class", "label")
-                    .attr("d", d3.svg.arc()
-                        .outerRadius(outerRadius)
-                        .innerRadius(innerRadius)
-                        .startAngle(function (d) { return d; })
-                        .endAngle(function (d) { return d + τ / n * 1.1; }))
-                    .text(function (d) { return label(d); })
-                    .attr("text-anchor", "middle")
-                    .attr("dy", ".35em")
-                    .attr("x", width / 2)
-                    .attr("y", height / 2);
         }
 
 
