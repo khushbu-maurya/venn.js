@@ -20,7 +20,11 @@ export function VennDiagram() {
         fontSize = null,
         orientationOrder = null,
         diagramType="circle",
-
+        outerRadius = 1,
+        innerRadius = 0.85,
+        π = Math.PI,
+        τ = 2 * π,
+        n = 500,
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
         colourMap = {},
@@ -123,15 +127,10 @@ export function VennDiagram() {
                     if (!end) {
                         end = {x : width/2, y : height/2, radius : 1};
                     }
-                    if(diagramType == "circle"){
+                    if(diagramType == "circle") {
                         return {'x' : start.x * (1 - t) + end.x * t,
                             'y' : start.y * (1 - t) + end.y * t,
                             'radius' : start.radius * (1 - t) + end.radius * t};
-                    } else {
-                        return {'cx' : start.x * (1 - t) + end.x * t,
-                        'cy' : start.y * (1 - t) + end.y * t,
-                        'rx' : start.x * (1 + t) + end.x * t,
-                        'ry' : start.y * (1 + t) + end.y * t};
                     }
                 });
                 return intersectionAreaPath(c);
@@ -153,6 +152,7 @@ export function VennDiagram() {
                 return d.sets.join("_");
             });
 
+            if(diagramType == "circle"){
         var enterPath = enter.append("path"),
             enterText = enter.append("text")
             .attr("class", "label")
@@ -161,6 +161,22 @@ export function VennDiagram() {
             .attr("dy", ".35em")
             .attr("x", width/2)
             .attr("y", height/2);
+            } else {
+                var enterPath = enter.append("path"),
+                enterText = enter.append("text")
+                .attr("transform", "translate(" + x + "," + y + ") scale(" + (width/2) + "," + (height/2) + ")")
+                .attr("class", "label")
+                .attr("d", d3.svg.arc()
+                .outerRadius(outerRadius)
+                .innerRadius(innerRadius)
+                .startAngle(function(d) { return d; })
+                .endAngle(function(d) { return d + τ / n * 1.1; }))
+                .text(function (d) { return label(d); } )
+                .attr("text-anchor", "middle")
+                .attr("dy", ".35em")
+                .attr("x", width/2)
+                .attr("y", height/2);
+            }
 
 
         // apply minimal style if wanted
