@@ -1,15 +1,11 @@
-import {select, selectAll} from "d3-selection";
-import {transition} from "d3-transition";
-
+import {select} from "d3-selection";
 import {venn, lossFunction, normalizeSolution, scaleSolution} from "./layout";
 import {intersectionArea, distance, getCenter} from "./circleintersection";
 import {nelderMead} from "fmin";
-var diagramType="circle";
 /*global console:true*/
 
 export function VennDiagram() {
-    console.log('running venn diagram');
-    var width = 600,
+      var width = 600,
         height = 350,
         padding = 15,
         duration = 1000,
@@ -19,6 +15,7 @@ export function VennDiagram() {
         styled = true,
         fontSize = null,
         orientationOrder = null,
+        diagramType="circle",
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
         colourMap = {},
