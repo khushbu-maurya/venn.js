@@ -1,6 +1,6 @@
 import {select, selectAll} from "d3-selection";
 import {transition} from "d3-transition";
-import * as d3 from "d3";
+import { d3 } from 'd3';
 import {venn, lossFunction, normalizeSolution, scaleSolution} from "./layout";
 import {intersectionArea, distance, getCenter} from "./circleintersection";
 import {nelderMead} from "fmin";
