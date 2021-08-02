@@ -127,11 +127,9 @@ export function VennDiagram() {
                     if (!end) {
                         end = {x : width/2, y : height/2, radius : 1};
                     }
-                    if(diagramType == "circle") {
                         return {'x' : start.x * (1 - t) + end.x * t,
                             'y' : start.y * (1 - t) + end.y * t,
                             'radius' : start.radius * (1 - t) + end.radius * t};
-                    }
                 });
                 return intersectionAreaPath(c);
             };
