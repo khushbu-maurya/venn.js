@@ -4,7 +4,7 @@ import {transition} from "d3-transition";
 import {venn, lossFunction, normalizeSolution, scaleSolution} from "./layout";
 import {intersectionArea, distance, getCenter} from "./circleintersection";
 import {nelderMead} from "fmin";
-
+var diagramType="circle";
 /*global console:true*/
 
 export function VennDiagram() {
@@ -19,8 +19,6 @@ export function VennDiagram() {
         styled = true,
         fontSize = null,
         orientationOrder = null,
-        diagramType="circle",
-
         // mimic the behaviour of d3.scale.category10 from the previous
         // version of d3
         colourMap = {},
@@ -570,7 +568,6 @@ export function sortAreas(div, relativeTo) {
 }
 
 export function circlePath(x, y, r) {
-    console.log('diagram type',diagramType);
     var ret = [];
     ret.push("\nM", x, y);
     ret.push("\nm", -r, 0);
