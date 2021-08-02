@@ -570,6 +570,7 @@ export function sortAreas(div, relativeTo) {
 }
 
 export function circlePath(x, y, r) {
+    console.log('diagram type',diagramType);
     var ret = [];
     ret.push("\nM", x, y);
     ret.push("\nm", -r, 0);
