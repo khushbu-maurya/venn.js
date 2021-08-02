@@ -164,7 +164,7 @@ export function VennDiagram() {
             } else {
                 var enterPath = enter.append("path"),
                 enterText = enter.append("text")
-                .attr("transform", "translate(" + x + "," + y + ") scale(" + (width/2) + "," + (height/2) + ")")
+                .attr("transform", "translate(" + 200 + "," + 150 + ") scale(" + (width/2) + "," + (height/2) + ")")
                 .attr("class", "label")
                 .attr("d", d3.svg.arc()
                 .outerRadius(outerRadius)
