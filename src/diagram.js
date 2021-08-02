@@ -568,12 +568,21 @@ export function sortAreas(div, relativeTo) {
 }
 
 export function circlePath(x, y, r) {
-    var ret = [];
-    ret.push("\nM", x, y);
-    ret.push("\nm", -r, 0);
-    ret.push("\na", r, r, 0, 1, 0, r *2, 0);
-    ret.push("\na", r, r, 0, 1, 0,-r *2, 0);
-    return ret.join(" ");
+    if(diagramType == "circle"){
+        var ret = [];
+        ret.push("\nM", x, y);
+        ret.push("\nm", -r, 0);
+        ret.push("\na", r, r, 0, 1, 0, r *2, 0);
+        ret.push("\na", r, r, 0, 1, 0,-r *2, 0);
+        return ret.join(" ");
+    } else {
+        var ret = [];
+        ret.push("\nM", x, y);
+        ret.push("\nm", -r, 0);
+        ret.push("\na", r, r, 0, 1, 0, r *2, 35);
+        ret.push("\na", r, r, 0, 1, 0,-r *2, 35);
+        return ret.join(" ");
+    }
 }
 
 // inverse of the circlePath function, returns a circle object from an svg path
