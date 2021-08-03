@@ -156,7 +156,7 @@ function getIntersectionPoints(circles) {
 
 /** Circular segment area calculation. See http://mathworld.wolfram.com/CircularSegment.html */
 export function circleArea(r, width) {
-    return r * r * Math.acos(1 - (width + 20)/r) - (r - (width+20)) * Math.sqrt(width * (2 * r - (width + 20)));
+    return r * r * Math.acos(1 - width/r) - (r - width) * Math.sqrt(width * (2 * r - width));
 }
 
 /** euclidean distance between two points */
