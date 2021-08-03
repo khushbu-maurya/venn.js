@@ -32,7 +32,7 @@ export function intersectionArea(circles, stats) {
             var p1 = innerPoints[i];
 
             // polygon area updates easily ...
-            polygonArea += (p2.x + p1.x) * (p1.y - p2.y - 25);
+            polygonArea += (p2.x + p1.x) * (p1.y - p2.y);
 
             // updating the arc area is a little more involved
             var midPoint = {x : (p1.x + p2.x) / 2,
@@ -156,7 +156,7 @@ function getIntersectionPoints(circles) {
 
 /** Circular segment area calculation. See http://mathworld.wolfram.com/CircularSegment.html */
 export function circleArea(r, width) {
-    return r * r * Math.acos(1 - width/r) - (r - width) * Math.sqrt(width * (2 * r - width));
+    return r * r * Math.acos(1 - (width + 20)/r) - (r - (width+20)) * Math.sqrt(width * (2 * r - (width + 20)));
 }
 
 /** euclidean distance between two points */
