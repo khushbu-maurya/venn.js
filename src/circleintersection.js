@@ -32,7 +32,7 @@ export function intersectionArea(circles, stats) {
             var p1 = innerPoints[i];
 
             // polygon area updates easily ...
-            polygonArea += (p2.x + p1.x) * (p1.y - p2.y);
+            polygonArea += ((p2.x +25) + p1.x) * ((p1.y + 25) - p2.y);
 
             // updating the arc area is a little more involved
             var midPoint = {x : (p1.x + p2.x) / 2,
