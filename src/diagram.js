@@ -576,8 +576,8 @@ export function circlePath(x, y, r) {
         var ret = [];
         ret.push("\nM", x, y);
         ret.push("\nm", -r, 0);
-        ret.push("\na", r, r, 0, 1, 0, r *2, 35);
-        ret.push("\na", r, r, 0, 1, 0,-r *2, 35);
+        ret.push("\na", r, r, 0, 1, 0, r *2, 25);
+        ret.push("\na", r, r, 0, 1, 0,-r *2, 25);
         return ret.join(" ");
     }
 }
