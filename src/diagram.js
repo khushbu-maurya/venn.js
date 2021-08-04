@@ -158,7 +158,7 @@ export function VennDiagram() {
             enterPath.style("fill-opacity", "0")
                 .filter(function (d) { return d.sets.length == 1; })
                 .style("fill", function (d) { return colours(d.sets); })
-                .style("fill-opacity", "1");
+                .style("fill-opacity", ".10");
 
             enterText
                 .style("fill", function (d) { return d.sets.length == 1 ? colours(d.sets) : "#444"; });
@@ -213,6 +213,7 @@ export function VennDiagram() {
             updateText.style("font-size", fontSize);
             exitText.style("font-size", "0px");
         }
+
 
         return {
             'circles': circles,
