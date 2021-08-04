@@ -76,12 +76,11 @@ export function VennDiagram() {
         data.forEach(function (datum) {
             if (datum.displayLabelName) {
                 labels[datum.sets] =  datum.displayLabelName;
-            } else {
-                labels[datum.sets] = datum.value;
             }
         });
 
         function label(d) {
+            console.log(labels);
             if (d.sets in labels) {
                 return labels[d.sets];
             }
