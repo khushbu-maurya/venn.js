@@ -77,7 +77,7 @@ export function VennDiagram() {
             if (datum.displayLabelName) {
                 labels[datum.sets] =  datum.displayLabelName;
             } else {
-                labels[datum.sets] = datum.value;
+                labels[datum.sets] = JSON.stringify(datum.value);
             }
         });
 
