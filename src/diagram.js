@@ -74,8 +74,8 @@ export function VennDiagram() {
         // and D3 won't necessarily update (fixes https://github.com/benfred/venn.js/issues/103)
         var labels = {};
         data.forEach(function (datum) {
-            if (displayLabelName) {
-                labels[datum.sets] =  displayLabelName;
+            if (datum.displayLabelName) {
+                labels[datum.sets] =  datum.displayLabelName;
             }
         });
 
