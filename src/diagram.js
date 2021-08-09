@@ -82,7 +82,6 @@ export function VennDiagram() {
         });
 
         function label(d) {
-            console.log(labels);
             if (d.sets in labels) {
                 return labels[d.sets];
             }
